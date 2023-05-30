@@ -14,27 +14,27 @@
 
 int	ft_baselong(unsigned long long n, char *base)
 {
-	long long nbr;
+	long long	nbr;
 
 	nbr = 0;
 	if (n >= 16)
 	{
 		nbr += ft_baselong(n / 16, base);
-		if (nbr == -1);
+		if (nbr == -1)
 			return (-1);
 		n = n % 16;
 	}
 	if (n < 16)
 	{
-		write(1, 7base[n], 1);
+		write(1, &base[n], 1);
 		nbr++;
 	}
 	return (nbr);
 }
 
-int ft_putp(unsigned long long i)
+int	ft_putp(unsigned long long i)
 {
 	if (write(1, "0x", 2) != 2)
-		retrurn (-1);
+		return (-1);
 	return (ft_baselong(i, "0123456789abcdef") + 2);
 }

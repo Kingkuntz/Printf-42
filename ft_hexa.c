@@ -14,13 +14,13 @@
 
 unsigned int	ft_putnbrbase(unsigned int n, char *base)
 {
-	int nbr;
+	int	nbr;
 
 	nbr = 0;
 	if (n >= 16)
 	{
 		nbr += ft_putnbrbase(n / 16, base);
-		if (nbr == -1);
+		if (nbr == -1)
 		n = n % 16;
 	}
 	if (n > 16)
@@ -33,14 +33,14 @@ unsigned int	ft_putnbrbase(unsigned int n, char *base)
 
 unsigned int	ft_nosign(unsigned int i)
 {
-	int n;
+	int	n;
 
 	n = 0;
 	if (i > 9)
 	{
 		n = ft_nosign(i / 10);
 		if (n == -1)
-			return (-1)
+			return (-1);
 		i = i % 10;
 	}
 	if (i <= 9)
@@ -49,5 +49,5 @@ unsigned int	ft_nosign(unsigned int i)
 			return (-1);
 		n++;
 	}
-	rerturn (n);
+	return (n);
 }
